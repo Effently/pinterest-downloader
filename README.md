@@ -1,5 +1,6 @@
 # pinterest-downloader
 Download all images/videos from Pinterest user/board/section.
+
 Fork with the latest fixes.
 
 ### Some features:
