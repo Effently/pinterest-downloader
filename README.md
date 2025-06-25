@@ -1,5 +1,6 @@
 # pinterest-downloader
 Download all images/videos from Pinterest user/board/section.
+Fork with the latest fixes.
 
 ### Some features:
 
@@ -17,11 +18,16 @@ Download all images/videos from Pinterest user/board/section.
 - [x] Proxies options. 
 - [x] Speed up existing folder update without re-fetch all pages. 
 - [x] Update all folders option.
-- [x] Can accept cookie (token) file in order to download with your account (useful for secret boards). Secret boards can be downloaded only when downloading by user. Example usage: copy your token after login into Pinterest and with its tab selected by using this extension [Get Token Cookie](https://chrome.google.com/webstore/detail/get-token-cookie/naciaagbkifhpnoodlkhbejjldaiffcm) or a similar one of your choice. Paste your token into a file called cookies.txt in the same directory where the pinterest-downloader is. Call the script and add the -co cookies.txt arguments to download your secret galleries
+- [x] Can accept cookie (token) file in order to download with your account (useful for secret boards). Secret boards can be downloaded only when downloading by user. Example usage: copy your token after login into Pinterest and with its tab selected by using this extension [Get Token Cookie](https://chromewebstore.google.com/detail/global-cookie-manager/bgffajlinmbdcileomeilpihjdgjiphb) or a similar one of your choice. Paste your token into a file called cookies.txt in the same directory where the pinterest-downloader is. Call the script and add the -co cookies.txt arguments to download your secret galleries
 
 ### Requirements:
 
     $ python3 -m pip install --upgrade -r requirements.txt 
+
+### Run with Docker
+
+    docker build -t app_pin_ex .
+    docker run -it -v "$(pwd)/images:/app/images" app_pin_ex   (optional args: -rs --cookies ./cookies.txt)
 
 ### Usage:
 
@@ -177,4 +183,10 @@ Download all images/videos from Pinterest user/board/section.
     import importlib
     pin_dl = importlib.import_module('pinterest-downloader')
     pin_dl.run_library_main('antonellomiglio/computer', '.', 0, -1, False, False, False, False, False, False, False, False, None, None, None)
+
+
+### Thanks a lot
+
+    Update API:
+    - https://github.com/raven2cz
 
